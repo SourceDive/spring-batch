@@ -23,6 +23,7 @@ import org.springframework.batch.core.repository.JobRestartException;
 import org.springframework.batch.core.repository.JobExecutionAlreadyRunningException;
 
 /**
+ * <p>作业启动器。</p>
  * Simple interface for controlling jobs, including possible ad-hoc executions,
  * based on different runtime identifiers. It is extremely important to note
  * that this interface makes absolutely no guarantees about whether or not calls

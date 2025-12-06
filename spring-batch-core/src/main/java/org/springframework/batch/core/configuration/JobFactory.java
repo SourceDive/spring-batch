@@ -18,6 +18,7 @@ package org.springframework.batch.core.configuration;
 import org.springframework.batch.core.Job;
 
 /**
+ * <p>作业工厂。</p>
  * Strategy for creating a single job.
  * 
  * @author Dave Syer

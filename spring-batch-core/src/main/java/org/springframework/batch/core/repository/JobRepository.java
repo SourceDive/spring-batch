@@ -25,6 +25,7 @@ import org.springframework.batch.core.StepExecution;
 import org.springframework.batch.item.ExecutionContext;
 
 /**
+ * <p>作业仓库。</p>
  * <p>
  * Repository for storing batch {@link JobExecution} and {@link StepExecution}s.
  * Before using any methods, a {@link JobExecution} must first be obtained using
