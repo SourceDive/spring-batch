@@ -32,6 +32,17 @@
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
         </dependency>
+        <!-- Apache Commons Collections: Spring Batch 运行时需要 -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+        </dependency>
+        <!-- Log4j: 用于日志记录 -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.14</version>
+        </dependency>
         <!-- 使用简单的内存数据库和连接池方便测试 -->
         <dependency>
             <groupId>commons-dbcp</groupId>
