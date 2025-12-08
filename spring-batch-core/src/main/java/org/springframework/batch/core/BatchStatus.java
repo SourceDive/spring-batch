@@ -20,6 +20,7 @@ import java.io.ObjectStreamException;
 import java.io.Serializable;
 
 /**
+ * <p>批次状态。</p>
  * Typesafe enumeration representing the status of an artifact within the batch environment. See Effective Java
  * Programming by Joshua Bloch for more details on the pattern used.
  * 

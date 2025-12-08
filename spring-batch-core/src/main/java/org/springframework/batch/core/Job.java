@@ -39,6 +39,7 @@ public interface Job {
 	boolean isRestartable();
 
 	/**
+     * <p>启动作业。</p>
 	 * Run the {@link JobExecution} and update the meta information like status
 	 * and statistics as necessary.
 	 * 

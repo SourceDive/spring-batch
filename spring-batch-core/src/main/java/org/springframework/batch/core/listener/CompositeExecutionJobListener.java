@@ -22,6 +22,7 @@ import org.springframework.batch.core.JobExecutionListener;
 import org.springframework.core.Ordered;
 
 /**
+ * <p>作业监听器集合。</p>
  * @author Dave Syer
  * 
  */

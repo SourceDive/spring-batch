@@ -27,6 +27,7 @@ import java.util.Map.Entry;
 import org.springframework.util.Assert;
 
 /**
+ * <p>执行上下文。</p>
  * Object representing a context for an {@link ItemStream}. It is a thin
  * wrapper for a map that allows optionally for type safety on reads. It also
  * allows for dirty checking by setting a 'dirty' flag whenever any put is

@@ -23,6 +23,7 @@ import org.springframework.batch.repeat.ExitStatus;
 import org.springframework.util.Assert;
 
 /**
+ * <p>步骤执行。</p>
  * Batch domain object representation the execution of a step. Unlike
  * JobExecution, there are four additional properties: itemCount, commitCount,
  * rollbackCount and execution context. These values represent how many items

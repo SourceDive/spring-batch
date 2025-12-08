@@ -25,6 +25,7 @@ import org.springframework.batch.item.ExecutionContext;
 import org.springframework.batch.repeat.ExitStatus;
 
 /**
+ * <p>作业执行。</p>
  * Batch domain object representing the execution of a job.
  * 
  * @author Lucas Ward

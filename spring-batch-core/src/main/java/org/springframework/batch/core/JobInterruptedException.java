@@ -18,6 +18,7 @@ package org.springframework.batch.core;
 
 
 /**
+ * <p>异常：作业已被中断。</p>
  * Exception to indicate the the job has been interrupted. The exception state
  * indicated is not normally recoverable by batch application clients, but
  * internally it is useful to force a check. The exception will often be wrapped
