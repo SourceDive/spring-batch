@@ -16,6 +16,7 @@
 package org.springframework.batch.core;
 
 /**
+ * <p>步骤</p>
  * Batch domain interface representing the configuration of a step. As with the (@link Job), a {@link Step} is meant to
  * explicitly represent a the configuration of a step by a developer, but also the ability to execute the step.
  * 
@@ -40,6 +41,7 @@ public interface Step {
 	int getStartLimit();
 
 	/**
+     * <p>执行给定的步骤。</p>
 	 * Process the step and assign progress and status meta information to the {@link StepExecution} provided. The
 	 * {@link Step} is responsible for setting the meta information and also saving it if required by the
 	 * implementation.<br/>

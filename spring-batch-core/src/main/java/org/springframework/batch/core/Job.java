@@ -18,6 +18,7 @@ package org.springframework.batch.core;
 import java.util.List;
 
 /**
+ * <p>作业。</p>
  * Batch domain object representing a job. Job is an explicit abstraction
  * representing the configuration of a job specified by a developer. It should
  * be noted that restart policy is applied to the job as a whole and not to a

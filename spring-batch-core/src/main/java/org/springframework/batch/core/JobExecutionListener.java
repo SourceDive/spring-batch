@@ -16,6 +16,7 @@
 package org.springframework.batch.core;
 
 /**
+ * <p>作业执行监听器。</p>
  * Provide callbacks at specific points in the lifecycle of a {@link Job}.
  * Implementations can be stateful if they are careful to either ensure thread
  * safety, or to use one instance of a listener per job, assuming that job
@@ -27,6 +28,7 @@ package org.springframework.batch.core;
 public interface JobExecutionListener {
 
 	/**
+     * <p>生命周期：作业执行前。</p>
 	 * Initialise the state of the listener with the {@link JobExecution} from
 	 * the current scope.
 	 * @param jobExecution the current {@link JobExecution}
@@ -34,6 +36,7 @@ public interface JobExecutionListener {
 	void beforeJob(JobExecution jobExecution);
 
 	/**
+     * <p>生命周期：作业执行后。</p>
 	 * Callback after successful completion of a job.
 	 * @param jobExecution the current {@link JobExecution}
 	 */

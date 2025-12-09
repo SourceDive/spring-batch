@@ -26,6 +26,8 @@ import org.springframework.batch.item.ExecutionContext;
 
 /**
  * <p>作业仓库。</p>
+ * <p>作用：存储 JobExecution 和 StepExecution.</p>
+ * <p>这里就是查表的入口了。</p>
  * <p>
  * Repository for storing batch {@link JobExecution} and {@link StepExecution}s.
  * Before using any methods, a {@link JobExecution} must first be obtained using
@@ -39,6 +41,7 @@ import org.springframework.batch.item.ExecutionContext;
 public interface JobRepository {
 
 	/**
+     * <p>创建作业执行。</p>
 	 * Find or create a {@link JobExecution} for a given {@link Job} and
 	 * {@link JobParameters}. If the {@link Job} was already executed with
 	 * these {@link JobParameters}, its persisted values (including ID) will be
@@ -64,6 +67,7 @@ public interface JobRepository {
 			JobRestartException, JobInstanceAlreadyCompleteException;
 
 	/**
+     * <p>更新作业执行。</p>
 	 * Save or Update a {@link JobExecution}. If no ID is found a new instance
 	 * will be saved. If an ID does exist it will be updated. The ID should only
 	 * be assigned to a {@link JobExecution} by calling this method - it should
@@ -78,6 +82,7 @@ public interface JobRepository {
 	void saveOrUpdate(JobExecution jobExecution);
 
 	/**
+     * <p>更新步骤执行。</p>
 	 * Save or update a {@link StepExecution}. If no ID is found a new instance
 	 * will be created (and saved). If an ID does exist it will be updated. It
 	 * is not advisable that an ID be assigned before calling this method.
@@ -93,6 +98,7 @@ public interface JobRepository {
 	void saveOrUpdate(StepExecution stepExecution);
 
 	/**
+     * <p>更新给定步骤执行的执行上下文。</p>
 	 * Save the {@link ExecutionContext} of the given {@link StepExecution}.
 	 * Implementations are allowed to ensure that the {@link StepExecution} is
 	 * already saved by calling {@link #saveOrUpdate(StepExecution)} before
@@ -109,6 +115,7 @@ public interface JobRepository {
 	StepExecution getLastStepExecution(JobInstance jobInstance, Step step);
 
 	/**
+     * <p>返回给定作业的步骤数量。</p>
 	 * @return the execution count of the step within the given job instance.
 	 */
 	int getStepExecutionCount(JobInstance jobInstance, Step step);

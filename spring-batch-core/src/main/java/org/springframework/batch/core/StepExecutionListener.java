@@ -18,6 +18,7 @@ package org.springframework.batch.core;
 import org.springframework.batch.repeat.ExitStatus;
 
 /**
+ * <p>步骤执行监听器</p>
  * Listener interface for the lifecycle of a {@link Step}.
  * 
  * @author Lucas Ward
@@ -27,6 +28,7 @@ import org.springframework.batch.repeat.ExitStatus;
 public interface StepExecutionListener extends StepListener {
 
 	/**
+     * <p>生命周期：步骤执行前。</p>
 	 * Initialise the state of the listener with the {@link StepExecution} from
 	 * the current scope.
 	 * @param stepExecution
@@ -44,6 +46,7 @@ public interface StepExecutionListener extends StepListener {
 	ExitStatus onErrorInStep(StepExecution stepExecution, Throwable e);
 
 	/**
+     * <p>生命周期：步骤执行后。</p>
 	 * Give a listener a chance to modify the exit status from a step. The value
 	 * returned will be combined with the normal exit status using
 	 * {@link ExitStatus#and(ExitStatus)}.

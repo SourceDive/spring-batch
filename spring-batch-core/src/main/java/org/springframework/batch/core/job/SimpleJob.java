@@ -56,10 +56,12 @@ public class SimpleJob extends AbstractJob {
 
 		StepExecution currentStepExecution = null;
 		int startedCount = 0;
+        // 获取步骤
 		List steps = getSteps();
 
 		try {
 
+            // 检查当前执行状态
 			// The job was already stopped before we even got this far. Deal
 			// with it in the same way as any other interruption.
 			if (execution.getStatus() == BatchStatus.STOPPING) {
@@ -67,10 +69,13 @@ public class SimpleJob extends AbstractJob {
 			}
 
 			execution.setStartTime(new Date());
+            // 更新执行状态
 			updateStatus(execution, BatchStatus.STARTING);
 
+            // 应用执行前监听器
 			getCompositeListener().beforeJob(execution);
 
+            // 遍历每一个 step
 			for (Iterator i = steps.iterator(); i.hasNext();) {
 
 				if (execution.getStatus() == BatchStatus.STOPPING) {
@@ -97,6 +102,7 @@ public class SimpleJob extends AbstractJob {
 						currentStepExecution.setExecutionContext(new ExecutionContext());
 					}
 
+                    // 执行步骤。
 					step.execute(currentStepExecution);
 
 				}
@@ -109,6 +115,7 @@ public class SimpleJob extends AbstractJob {
 
 			updateStatus(execution, BatchStatus.COMPLETED);
 
+            // 应用执行后监听器
 			getCompositeListener().afterJob(execution);
 
 		}
@@ -139,6 +146,8 @@ public class SimpleJob extends AbstractJob {
 
 			execution.setEndTime(new Date());
 			execution.setExitStatus(status);
+
+            // 更新作业执行。
 			getJobRepository().saveOrUpdate(execution);
 		}
 

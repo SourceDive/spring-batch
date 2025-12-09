@@ -162,6 +162,7 @@ public abstract class AbstractStep implements Step, InitializingBean, BeanNameAw
 		Exception commitException = null;
 
 		try {
+            // 应用监听器。
 			getCompositeListener().beforeStep(stepExecution);
 			try {
 				open(stepExecution.getExecutionContext());
