@@ -35,6 +35,7 @@ import org.springframework.retry.policy.MapRetryContextCache;
 import org.springframework.retry.policy.RetryContextCache;
 
 /**
+ * <p>容错处理</p>
  * Factory bean for step that provides options for configuring skip behavior. User can set
  * {@link #setSkipLimit(int)} to set how many exceptions of
  * {@link #setSkippableExceptionClasses(Map)} types are tolerated.
